@@ -1,4 +1,5 @@
-const Hero = () => (
+export default function Hero() {
+  return (
     <section className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white h-screen flex flex-col justify-center items-center text-center">
       <h1 className="text-5xl font-bold mb-4">Hi, I'm Your Name</h1>
       <p className="text-lg mb-6">A passionate web developer</p>
@@ -7,4 +8,4 @@ const Hero = () => (
       </button>
     </section>
   );
-  
+}
