@@ -38,18 +38,18 @@ function Header() {
         {/* Desktop Navigation (Hidden on smaller screens) */}
         <nav className="hidden md:block">
           <ul className="flex space-x-8">
-            <li><a href="#" className="hover:text-primary transition-colors duration-300">Home</a></li>
-            <li><a href="#" className="hover:text-primary transition-colors duration-300">About</a></li>
+            <li><a href="#" className="text-black hover:text-primary transition-colors duration-300">Home</a></li>
+            <li><a href="#" className="text-black hover:text-primary transition-colors duration-300">About</a></li>
             <li className="group relative">
-              <a href="#" className="hover:text-primary transition-colors duration-300">Services</a>
+              <a href="#" className="text-black hover:text-primary transition-colors duration-300">Services</a>
               {/* Dropdown Menu */}
-              <ul className="absolute left-0 hidden group-hover:block bg-white shadow-md py-2 mt-1 rounded-md w-48 transition-all duration-300">
+              {/* <ul className="absolute left-0 hidden group-hover:block bg-white shadow-md py-2 mt-1 rounded-md w-48 transition-all duration-300">
                 <li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Service 1</a></li>
                 <li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Service 2</a></li>
                 <li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Service 3</a></li>
-              </ul>
+              </ul> */}
             </li>
-            <li><a href="#" className="hover:text-primary transition-colors duration-300">Contact</a></li>
+            <li><a href="#" className="text-black hover:text-primary transition-colors duration-300">Contact</a></li>
             <li><a href="#" className="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-md transition-colors duration-300">Get Started</a></li>
           </ul>
         </nav>
@@ -58,12 +58,12 @@ function Header() {
       {/* Mobile Menu (Hidden by default) */}
       <nav className={`md:hidden bg-gray-50 border-t border-gray-200 transition-height duration-300 ease-in-out ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
         <ul className="px-4 py-2">
-          <li><a href="#" className="block py-2 hover:text-primary">Home</a></li>
-          <li><a href="#" className="block py-2 hover:text-primary">About</a></li>
+          <li><a href="#" className="text-black block py-2 hover:text-primary">Home</a></li>
+          <li><a href="#" className="text-black block py-2 hover:text-primary">About</a></li>
           <li>
             <a
               onClick={toggleServicesDropdown}
-              className="block py-2 hover:text-primary"
+              className="text-black block py-2 hover:text-primary"
             >
               Services
             </a>
@@ -74,7 +74,7 @@ function Header() {
               <li><a href="#" className="block py-2 hover:text-primary">Service 3</a></li>
             </ul>
           </li>
-          <li><a href="#" className="block py-2 hover:text-primary">Contact</a></li>
+          <li><a href="#" className="text-black block py-2 hover:text-primary">Contact</a></li>
           <li><a href="#" className="block py-2 bg-primary hover:bg-secondary text-white rounded-md text-center transition-colors duration-300">Get Started</a></li>
         </ul>
       </nav>
