@@ -1,20 +1,26 @@
-const Projects = () => (
-    <section className="py-20 px-6 bg-white">
-      <h2 className="text-4xl font-semibold text-center text-gray-800 mb-10">My Projects</h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">Project 1</h3>
-          <p className="text-gray-600">Description of your first project. A web app built with React and Tailwind CSS.</p>
+function Projects() {
+    return (
+      <section className="py-20 bg-gray-800">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-semibold">My Projects</h2>
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-blue-700 p-4 rounded">
+              <h3 className="text-xl">Project 1</h3>
+              <p>Short description of project 1.</p>
+            </div>
+            <div className="bg-blue-700 p-4 rounded">
+              <h3 className="text-xl">Project 2</h3>
+              <p>Short description of project 2.</p>
+            </div>
+            <div className="bg-blue-700 p-4 rounded">
+              <h3 className="text-xl">Project 3</h3>
+              <p>Short description of project 3.</p>
+            </div>
+          </div>
         </div>
-        <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">Project 2</h3>
-          <p className="text-gray-600">Description of your second project. A responsive portfolio built using React.</p>
-        </div>
-        <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">Project 3</h3>
-          <p className="text-gray-600">Description of your third project. A full-stack app with backend integration.</p>
-        </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
+  }
+  
+  export default Projects;
   

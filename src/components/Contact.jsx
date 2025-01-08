@@ -1,21 +1,70 @@
-const ContactForm = () => (
-    <section className="py-20 px-6 bg-white">
-      <h2 className="text-4xl font-semibold text-center text-gray-800 mb-10">Contact Me</h2>
-      <form className="max-w-xl mx-auto bg-gray-100 p-8 rounded-lg shadow-lg">
-        <div className="mb-4">
-          <label htmlFor="name" className="block text-gray-800 mb-2">Full Name</label>
-          <input type="text" id="name" className="w-full p-3 border border-gray-300 rounded-lg" required />
-        </div>
-        <div className="mb-4">
-          <label htmlFor="email" className="block text-gray-800 mb-2">Email Address</label>
-          <input type="email" id="email" className="w-full p-3 border border-gray-300 rounded-lg" required />
-        </div>
-        <div className="mb-4">
-          <label htmlFor="message" className="block text-gray-800 mb-2">Message</label>
-          <textarea id="message" className="w-full p-3 border border-gray-300 rounded-lg" required rows="4"></textarea>
-        </div>
-        <button type="submit" className="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-500 w-full">Send Message</button>
-      </form>
+import { useState } from 'react';
+
+function ContactForm() {
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [response, setResponse] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Send form data to API (this is just a mock)
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      headers: { 'Content-Type': 'application/json' }
+    });
+
+    const data = await res.json();
+    setResponse(data);
+  };
+
+  return (
+    <section className="py-20 bg-blue-800">
+      <div className="container mx-auto text-center">
+        <h2 className="text-3xl font-semibold">Contact Me</h2>
+        <form className="mt-8" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full p-4 mt-2 rounded bg-gray-700"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full p-4 mt-2 rounded bg-gray-700"
+          />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone (Optional)"
+            value={formData.phone}
+            onChange={handleChange}
+            className="w-full p-4 mt-2 rounded bg-gray-700"
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            value={formData.message}
+            onChange={handleChange}
+            className="w-full p-4 mt-2 rounded bg-gray-700"
+          />
+          <button type="submit" className="bg-blue-600 text-white p-4 rounded mt-4">Submit</button>
+        </form>
+
+        {response && <div className="mt-4 text-xl">{response.message}</div>}
+      </div>
     </section>
   );
-  
+}
+
+export default ContactForm;

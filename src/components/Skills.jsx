@@ -1,24 +1,18 @@
-const Skills = () => (
-    <section className="py-20 px-6 bg-gray-100">
-      <h2 className="text-4xl font-semibold text-center text-gray-800 mb-10">My Skills</h2>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        <div className="text-center">
-          <h3 className="text-2xl font-semibold text-gray-800 mb-2">HTML</h3>
-          <div className="h-1 w-24 bg-purple-600 mx-auto"></div>
+function Skills() {
+    return (
+      <section className="py-20 bg-gray-900">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-semibold">Skills</h2>
+          <ul className="mt-8 list-disc text-lg">
+            <li>HTML, CSS, JavaScript</li>
+            <li>React.js, Node.js</li>
+            <li>Tailwind CSS, Bootstrap</li>
+            <li>Version Control (Git)</li>
+          </ul>
         </div>
-        <div className="text-center">
-          <h3 className="text-2xl font-semibold text-gray-800 mb-2">CSS</h3>
-          <div className="h-1 w-24 bg-purple-600 mx-auto"></div>
-        </div>
-        <div className="text-center">
-          <h3 className="text-2xl font-semibold text-gray-800 mb-2">JavaScript</h3>
-          <div className="h-1 w-24 bg-purple-600 mx-auto"></div>
-        </div>
-        <div className="text-center">
-          <h3 className="text-2xl font-semibold text-gray-800 mb-2">React</h3>
-          <div className="h-1 w-24 bg-purple-600 mx-auto"></div>
-        </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
+  }
+  
+  export default Skills;
   

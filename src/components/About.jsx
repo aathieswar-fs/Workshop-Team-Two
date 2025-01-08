@@ -1,9 +1,15 @@
-const About = () => (
-    <section className="py-20 px-6 bg-gray-100 text-center">
-      <h2 className="text-4xl font-semibold text-gray-800 mb-4">About Me</h2>
-      <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-        I'm a web developer with experience in building beautiful and functional websites. I love creating web applications that are user-friendly, scalable, and maintainable.
-      </p>
-    </section>
-  );
+function About() {
+    return (
+      <section className="py-20 bg-gray-900">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-semibold">About Me</h2>
+          <p className="mt-4 text-lg">
+            I'm a passionate developer with experience in front-end technologies, building engaging web experiences.
+          </p>
+        </div>
+      </section>
+    );
+  }
+  
+  export default About;
   
